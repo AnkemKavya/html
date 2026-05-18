@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance Sheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f7;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 36px auto;
+      padding: 24px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      border-radius: 16px;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #111827;
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .form-grid label {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      color: #374151;
+    }
+
+    .form-grid input,
+    .form-grid select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      font-size: 0.97rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-grid input:focus,
+    .form-grid select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      font-size: 1rem;
+      padding: 12px 16px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    th {
+      background: #eef2ff;
+      color: #1f2937;
+      font-weight: 600;
+    }
+
+    tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .present { background: #16a34a; }
+    .absent { background: #dc2626; }
+    .late { background: #f59e0b; }
+    .remove-button {
+      background: #e5e7eb;
+      color: #111827;
+      border-radius: 10px;
+      padding: 8px 12px;
+    }
+
+    .remove-button:hover {
+      background: #d1d5db;
+    }
+
+    .note {
+      margin-top: 18px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Attendance Sheet</h1>
+    <div class="form-grid">
+      <div>
+        <label for="studentName">Student Name</label>
+        <input id="studentName" type="text" placeholder="e.g. Aisha Khan" />
+      </div>
+      <div>
+        <label for="studentClass">Class / Section</label>
+        <input id="studentClass" type="text" placeholder="e.g. 10-A" />
+      </div>
+      <div>
+        <label for="attendanceDate">Date</label>
+        <input id="attendanceDate" type="date" />
+      </div>
+      <div>
+        <label for="attendanceStatus">Status</label>
+        <select id="attendanceStatus">
+          <option value="Present">Present</option>
+          <option value="Absent">Absent</option>
+          <option value="Late">Late</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:flex; gap: 12px; flex-wrap: wrap;">
+      <button id="addButton">Add Attendance</button>
+      <button id="clearButton" type="button" style="background:#ef4444;">Clear Fields</button>
+    </div>
+    <p class="note">Tip: Add each student attendance entry and use the Remove button to delete a row if needed.</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Class / Section</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="attendanceTable">
+          <tr>
+            <td colspan="6" style="text-align:center; padding: 28px 0; color:#6b7280;">No attendance records yet.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const studentName = document.getElementById('studentName');
+    const studentClass = document.getElementById('studentClass');
+    const attendanceDate = document.getElementById('attendanceDate');
+    const attendanceStatus = document.getElementById('attendanceStatus');
+    const addButton = document.getElementById('addButton');
+    const clearButton = document.getElementById('clearButton');
+    const attendanceTable = document.getElementById('attendanceTable');
+
+    function createStatusLabel(status) {
+      const span = document.createElement('span');
+      span.textContent = status;
+      span.className = 'status-pill ' + status.toLowerCase();
+      return span;
+    }
+
+    function updateEmptyState() {
+      if (attendanceTable.children.length === 0) {
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = '<td colspan="6" style="text-align:center; padding: 28px 0; color:#6b7280;">No attendance records yet.</td>';
+        attendanceTable.appendChild(emptyRow);
+      }
+    }
+
+    function clearEmptyState() {
+      if (attendanceTable.children.length === 1 && attendanceTable.children[0].querySelector('td[colspan="6"]')) {
+        attendanceTable.innerHTML = '';
+      }
+    }
+
+    function clearFields() {
+      studentName.value = '';
+      studentClass.value = '';
+      attendanceDate.value = '';
+      attendanceStatus.value = 'Present';
+      studentName.focus();
+    }
+
+    function addAttendance() {
+      const name = studentName.value.trim();
+      const classSection = studentClass.value.trim();
+      const date = attendanceDate.value;
+      const status = attendanceStatus.value;
+
+      if (!name || !classSection || !date) {
+        alert('Please fill in Name, Class/Section, and Date.');
+        return;
+      }
+
+      clearEmptyState();
+
+      const row = document.createElement('tr');
+      const index = attendanceTable.children.length + 1;
+      row.innerHTML = `
+        <td>${index}</td>
+        <td>${name}</td>
+        <td>${classSection}</td>
+        <td>${new Date(date).toLocaleDateString()}</td>
+        <td></td>
+        <td><button type="button" class="remove-button">Remove</button></td>
+      `;
+
+      const statusCell = row.querySelector('td:nth-child(5)');
+      statusCell.appendChild(createStatusLabel(status));
+
+      row.querySelector('.remove-button').addEventListener('click', () => {
+        row.remove();
+        if (attendanceTable.children.length === 0) {
+          updateEmptyState();
+        } else {
+          Array.from(attendanceTable.children).forEach((tr, idx) => {
+            tr.children[0].textContent = idx + 1;
+          });
+        }
+      });
+
+      attendanceTable.appendChild(row);
+      clearFields();
+    }
+
+    addButton.addEventListener('click', addAttendance);
+    clearButton.addEventListener('click', clearFields);
+    updateEmptyState();
+  </script>
+</body>
+</html>
