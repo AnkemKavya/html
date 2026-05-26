@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Display Block</title>
+        <title>Display</title>
         <style>
             .display{
                 display: block;
@@ -21,9 +21,18 @@
             }
             .displayinline{
                 display: inline-block;
-                width: 100px;
-                height: 100px;
+                width: 350px;
+                height: 150px;
                 background: orange;
+            }
+            .box{
+                display: inline-block;
+                width: 350px;
+                height: 100px;
+                background: yellow;
+            }
+            .hide{
+                display: none;
             }
         </style>
     </head>
@@ -34,24 +43,38 @@
         <p>display:block takes full width and starts on new line.</p><br>
         </div>
         <div class="block">
-        <p>Expected output</p>
+        <p>Expected output:</p>
         <p>Each div appears on separate line with full width</p>
         </div>
         <hr>
         <h1>Display Inline</h1>
         <div class="inline">
-            <p>Explanation</p>
+            <p>Explanation:</p>
             <p>display:inline keeps element in same line</p>
         </div>
         <div class="line">
-            <p>Expected output</p>
+            <p>Expected output:
             <p>Text appears side by side in same line</p>
         </div>
         <hr>
         <h1>Display Inline-Block</h1>
         <div class="displayinline">
-            <p>Explanation</p>
+            <p>Explanation:</p>
             <p>Allows width and height while staying inline</p>
         </div>
+        <div class="box">
+            <p>Expected output:</p>
+            <p>Boxes appear side by side.</p>
+        </div>
+        <hr>
+        <h1>Display None</h1>
+        <div class="hide">
+            <p>Explanation:</p>
+            <p>display:inline keeps element in same line</p>
+        </div>
+            <p>Expected output:</p>
+            <p>Text appears side by side in same line</p>
+        
+        
     </body>
 </html>
