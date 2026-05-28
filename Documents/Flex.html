@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flex</title>
+        <style>
+            .Direction{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .appear{
+                display: flex;
+                flex-direction: column;
+   
+            }
+            .wrap{
+                flex-wrap: wrap;
+            }
+            .grow{
+                flex-grow: 6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Flex Direction</h1>
+        <div class="Direction">
+            <p>Explanation:</p>
+            <p>Controls row or column layout.</p>
+        </div>
+        <div class="appear">
+            <p>Expected output:</p>
+            <p>Items appear horizontally.</p>
+        </div>
+        <hr>
+
+        <h1>Flex Wrap</h1>
+        <div class="wrap">
+            <p>Explanation:</p>
+            <p>Move items to next line.</p> 
+        </div>
+            <p>Expected output:</p>
+            <p>Items wrap automatically.</p>
+        <hr>
+
+        <h1>Flex Grow</h1>
+        <div class="grow">
+            <p>Explanation:</p>
+            <p>Allows items growth.</p> 
+        </div>
+            <p>Expected output:</p>
+            <p>Items take remaining space.</p>
+        <hr>
+    </body>
+</html>
