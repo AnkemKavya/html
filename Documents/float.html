@@ -13,11 +13,20 @@
         .clear{
             clear: both;
         }
+        .justify{
+            justify-content: center;
+        }
+        .end{
+            justify-content: end;
+        }
+        .items{
+            align-items: center;
+        }
         </style>
     </head>
     <body>
         <h1>Float left</h1>
-        <img width="200px" height="200px" src="https://www.asus.com/media/Odin/Websites/global/Series/9.png">
+        <img width="200px" height="172px" src="https://www.asus.com/media/Odin/Websites/global/Series/9.png">
         <div class="laptop">
         <p>Explanation:</p>
         <p>Moves element to left</p>
@@ -33,5 +42,28 @@
         <p>Expected output:</p>
         <p>Content moves below floated elements.</p>
         </div>
+        <hr>
+
+        <h1>Justify content</h1>
+        <div class="Justify">
+        <p>Explanation:</p>
+        <p>Alings items horizontally.</p>
+        </div>
+        <div class="end">
+        <p>Expected output:</p>
+        <p>Items move to center.</p>
+        </div>
+        <hr>
+
+        <h1>align-items</h1>
+        <div class="items">
+        <p>Explanation</p>
+        <p>Aligns items vertically.</p>
+        </div>
+        <div class="">
+        <p>Expected output:</p>
+        <p>Items vertically centered</p>
+        </div>
+        <hr>
     </body>
 </html>
