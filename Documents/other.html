@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Properties</title>
+        <style>
+        img{
+            float: left;
+            margin-right: 50px;
+        }
+        .laptop{
+            padding-top: 20px;
+        }
+        .clear{
+            clear: both;
+        }
+        .justify{
+            justify-content: center;
+        }
+        .end{
+            justify-content: end;
+        }
+        .items{
+            align-items: center;
+        }
+        .gap{
+            gap: 100px;
+        }
+        .self{
+            align-self: flex-end;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Float left</h1>
+        <img width="200px" height="172px" src="https://www.asus.com/media/Odin/Websites/global/Series/9.png">
+        <div class="laptop">
+        <p>Explanation:</p>
+        <p>Moves element to left</p>
+        <p>Expected output:</p>
+        <p>Text wraps beside image</p>
+        </div>
+        <hr>
+
+        <h1>Clear both</h1>
+        <div class="clear">
+        <p>Explanation:</p>
+        <p>Stops wrapping.</p>
+        <p>Expected output:</p>
+        <p>Content moves below floated elements.</p>
+        </div>
+        <hr>
+
+        <h1>Justify content</h1>
+        <div class="Justify">
+        <p>Explanation:</p>
+        <p>Alings items horizontally.</p>
+        </div>
+        <div class="end">
+        <p>Expected output:</p>
+        <p>Items move to center.</p>
+        </div>
+        <hr>
+
+        <h1>align-items</h1>
+        <div class="items">
+        <p>Explanation</p>
+        <p>Aligns items vertically.</p>
+        </div>
+        <div class="">
+        <p>Expected output:</p>
+        <p>Items vertically centered</p>
+        </div>
+        <hr>
+
+        <h1>Gap</h1>
+        <div class="gap">
+            <p>Explanation:</p>
+            <p>Adds spacing.</p>
+        </div>
+            <p>Expected output:</p>
+            <p>20px space between items.</p>
+            <hr>
+
+        <h1>Align self</h1>
+        <div class="self">
+            <p>Explanation:</p>
+            <p>Aligns individual items.</p>
+        </div>
+        
+    </body>
+</html>
