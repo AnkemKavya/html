@@ -20,6 +20,33 @@
             .grow{
                 flex-grow: 6;
             }
+            .header{
+                display: flex;
+                justify-content: space-between;
+                flex-grow: 1;
+                flex-wrap: wrap;
+                align-items: center;
+                box-shadow: 200px;
+            }
+            img{
+                height: 60px;
+                width: 60px;
+            }
+            .name{
+                font-size: 24px;
+                font-weight: bolder;
+                color: red;
+                padding-right: 20px;
+            }
+            .search{
+
+            }
+            .login-btn{
+                border-radius: 8px;
+                color: white;
+                background-color: red;
+                border-color: red;
+            }
         </style>
     </head>
     <body>
@@ -51,5 +78,19 @@
             <p>Expected output:</p>
             <p>Items take remaining space.</p>
         <hr>
+
+    
+            <div class="header">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.kl1_3YcpsWRnB0-2EEVwUAHaHa?pid=Api&P=0&h=180">
+                <div class="name">NETFLIX</div>
+                <div class="search">
+                    <input type="text" placeholder="Search for your account">
+                </div>
+                <div class="button">
+                    <button class="login-btn">Log in</button>
+                    <button class="signup-btn">Sign up</button>
+                </div>
+        </div>
+        
     </body>
 </html>
