@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic font size</title>
+        <script>
+            function onClickToIncrease() {
+                debugger;
+                var fSize=document.getElementById("txtFontSize").value;
+                document.getElementById("txtName").style.fontSize=fSize+"%";
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label id="lblFontSize">Font Size:</label>
+            <input id="txtFontSize" type="number">
+        </form>
+        <button id="btnIncrease" onclick="onClickToIncrease()">Save</button>
+        <p id="txtName">This is to check the font size of the paragraph.</p>
+    </body>
+</html>
