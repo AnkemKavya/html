@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic class</title>
+        <style>
+            .open-btn{
+                color: white;
+                background-color: red;
+                border-color: red;
+                border-radius: 5px;
+            }
+            .back-btn{
+                background-color: grey;
+                border-color: grey;
+                border-radius: 5px;
+            }
+            .page{
+                background-color: greenyellow;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <script defer>
+            function onClickOpen() {
+                debugger;
+                alert("clicked");
+                document.getElementById("divResult").classList.add("page")
+            }
+            function onClickBack() {
+                debugger;
+                alert("onclicked");
+                document.getElementById("divResult").classList.remove("page")
+            }
+            function ToggleEvent() {
+                document.getElementById("divResult").classList.toggle("page")
+            }
+        </script>
+    </head>
+    <body>
+        <div id="divResult">
+                <img src="https://tse2.mm.bing.net/th/id/OIP.dSfDR9CqAoNnog0RVrOlcgHaHa?pid=Api&P=0&h=180"></div>
+                <p style="justify-content: center;">This is my page</p>
+        
+                <button id="btnOpen" class="open-btn" onclick="onClickOpen()">open</button>
+                <button id="btnBack" class="back-btn" onclick="onClickBack()">Back</button>
+                <button id="btntoggle" onmouseover="ToggleEvent()">next</button>
+    </body>
+</html>
