@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid</title>
+        <style>
+            .columns{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+            }
+            .rows{
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr;
+            }
+            .gap{
+                display: grid;
+                
+                gap: 50px;
+            }
+            .area{
+                display: grid;
+                grid-area: 1 / 1 / 3 / 3;
+            }
+            p{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Grid Template columns</h1>
+        <div class="columns"> 
+            <div>
+            <img src="https://s.yimg.com/fz/api/res/1.2/.4X2.jOZbHhf8LKTYX6ArA--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/38/a9/cb/38a9cbfb3dfa6b37e0836365924fdc0f.jpg">
+            <p>fig.1.1</p>
+            </div>
+            <div>
+            <img src="https://s.yimg.com/fz/api/res/1.2/aK_ocDqZHLTduRoZoc3HTQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/b3/9e/09/b39e0927eb1f85c66467c789314a2ae4.jpg">
+            <p>fig.1.2</p>
+            </div>
+            <div>
+            <img src="https://s.yimg.com/fz/api/res/1.2/rVUnDdm08PyRFWV66Rutzg--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/31/bc/84/31bc84e0fa95c63cffe8a77f39d3e894.jpg">
+            <p>fig.1.3</p>
+            </div>
+        </div>
+        <hr>
+
+        <h1>Grid Template rows</h1>
+        <div class="rows">
+            <img src="https://s.yimg.com/fz/api/res/1.2/r0lmK06Iew7ISvkqsWv0Ug--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/72/43/48/72434863b37448da945b1bde80aa0476.jpg">
+            <img src="https://s.yimg.com/fz/api/res/1.2/tj8ldE2InUyAcYYiU9ZXjw--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/5f/fc/a1/5ffca1b40c194cac23c741d67aa2bc22.jpg">
+            <img src="https://s.yimg.com/fz/api/res/1.2/KJZ5ZU8zc89mU9X_0G3jcQ--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/92/75/5a/92755a4e446ca04bd103782e3a0cef0c.jpg">
+        </div>
+        <hr>
+
+        <h1>Grid Gap</h1>
+        <div class="gap">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.f8Md1nrEDwz6EOAo7r1E2QHaE-?pid=Api&P=0&h=180">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.etVOiuB6SOW95KhXQ8ZXhAHaFK?pid=Api&P=0&h=180">
+        </div>
+        <hr>
+
+        <h1>Grid area</h1>
+        <div class="area">
+            <img src="https://up.yimg.com/ib/th/id/OIP.pBiayPEJgh9dtC5UWRq_qwHaEo?pid=Api&rs=1&c=1&qlt=95&w=157&h=98">
+            <img src="https://up.yimg.com/ib/th/id/OIP.MCLzVoExgXPyNi_V5gb1AwHaE7?pid=Api&rs=1&c=1&qlt=95&w=147&h=98">
+            <img src="https://up.yimg.com/ib/th/id/OIP.Mvcr0QDsGXOx29cSBfXd6AHaE7?pid=Api&rs=1&c=1&qlt=95&w=147&h=98">
+            <img src="https://up.yimg.com/ib/th/id/OIP.0R4CWDsaK33WsVYAHwUwvgHaEo?pid=Api&rs=1&c=1&qlt=95&w=155&h=97">
+        </div>
+        <hr>
+    </body>
+</html>
