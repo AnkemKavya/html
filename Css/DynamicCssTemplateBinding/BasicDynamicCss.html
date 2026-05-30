@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Css</title>
+        <style>
+            #divResult{
+                background-color: chartreuse;
+            }
+        </style>
+        <script>
+           function onClickChangeColor() {
+                debugger;
+                alert("clicked");
+                var divResult=document.getElementById("divResult");
+                divResult.style.backgroundColor="violet";
+                divResult.style.borderStyle="dark-border";
+                divResult.style.borderRadius="8px";
+                divResult.style.padding="10px";
+                divResult.style.borderStyle="double";
+           }
+        </script>
+    </head>
+    <body>
+        <div id="divResult">This information has background color.</div>
+        <button id="btnResult" onclick="onClickChangeColor()">Click</button>
+    </body>
+</html>
