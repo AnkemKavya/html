@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic Color Change</title>
+        <script defer>
+            function onClickToChangeColor() {
+                debugger;
+                var color=document.getElementById("txtColor").value;
+                document.getElementById("txtName").style.backgroundColor=color;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <label id="lblColor">Color:</label>
+            <input id="txtColor" type="text" placeholder="Type the color">
+        </form>
+        <button id="btncolor" onclick="onClickToChangeColor()">Change Color</button>
+        <p id="txtName">An object appears coloured because of the way it interacts with light. The analysis of this interaction and the factors that determine it are the concerns of the physics of colour. The physiology of colour involves the eye’s and the brain’s responses to light and the sensory data they produce. The psychology of colour is invoked when the mind processes visual data, compares it with information stored in memory, and interprets it as colour.</p>
+    </body>
+</html>
