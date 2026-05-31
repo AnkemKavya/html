@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic width</title>
+    <link rel="stylesheet" href="../Styles/DynamicWidth.css">
+
+    <script>
+        function onClickToChangeWidth() {
+            debugger;
+            var width = document.getElementById("txtName").value;
+            document.getElementById("divWidth").style.width = width + "%";
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <label id="lblWidth"></label>
+        <input id="txtName" type="number" min="0" max="100" placeholder="enter a number upto 100">
+    </form><br>
+    <button id="btnWidth" onclick="onClickToChangeWidth()">Submit</button><br><br>
+    <div id="divWidth" class="percentage">
+
+    </div>
+</body>
+
+</html>
+
