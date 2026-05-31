@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic Online</title>
+    <link rel="stylesheet" href="../Styles/DynamicOnline.css">
+    <script defer>
+        function onClickGoOnline() {
+            debugger;
+            document.getElementById("divOnline").classList.add("page");
+            document.getElementById("divOffline").classList.remove("page");
+        }
+        function onClickGoOffline() {
+            debugger;
+            document.getElementById("divOffline").classList.add("page");
+            document.getElementById("divOnline").classList.remove("page");
+        }
+    </script>
+</head>
+
+<body>
+        <div id="divOnline">
+        <button id="btnOnline" onclick="onClickGoOnline()">Go online</button><br><br>
+            <label id="lbltxt">Current Status</label>
+            <span><ul><li class="Online">Offline</li></ul></span>
+        </div>
+        <div id="divOffline" class="page">
+        <button id="btnOffline" onclick="onClickGoOffline()">Go offline</button><br><br>
+        <label id="lbltxt">Current Status</label>
+        <ul><li class="Offline">Online</li></ul>
+    </div>
+</body>
+
+</html>
