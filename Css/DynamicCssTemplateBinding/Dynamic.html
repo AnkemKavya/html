@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dynamic</title>
+        <link rel="stylesheet" href="../Styles/Dynamic.css">
+        <script>
+            function onClickNext() {
+                debugger;
+                document.getElementById("divPage").classList.add("page");
+                document.getElementById("divHidden").classList.remove("page");
+            }
+            function onClickBack() {
+               debugger;
+                document.getElementById("divPage").classList.remove("page");
+                document.getElementById("divHidden").classList.add("page"); 
+            }
+        </script>
+    </head>
+    <body>
+        <div id="divPage">
+        <h1>Next Step</h1>
+        <p>“ what are the Next Steps ” is a common phrase used to request clarity on the actions or tasks that need to follow after a discussion, meeting, or decision. It’s a way of showing initiative, ensuring alignment, and demonstrating responsibility in moving a project or conversation forward.</p>
+        </div>
+
+        <div id="divHidden" class="page">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.roP8O95-kcF4BAwh0x_rtgHaEK?pid=Api&P=0&h=180">
+            <p>your go-to destination for inspiration, motivation, and guidance as you navigate the twists and turns of life’s journey. Whether you’re embarking on a new career path, pursuing a personal passion, or simply seeking encouragement to take that next big leap, we’ve curated a collection of quotes to ignite your inner drive and propel you forward.</p>
+            <p>we understand that every step forward is a victory, no matter how small or daunting it may seem. That’s why we’ve gathered wisdom from thought leaders, visionaries, and everyday heroes to remind you that progress is not only possible but essential. From overcoming obstacles to embracing change, our quotes are here to empower you to embrace the challenges and opportunities that lie ahead.</p>
+            <p>So, dive in, explore, and let the words of wisdom on this page inspire you to take that next step towards your goals, dreams, and aspirations. Remember, the journey of a thousand miles begins with a single step, and you have the power to shape your destiny. Now, without further ado, let the quotes below fuel your determination and propel you towards your brightest future.</p>
+        </div>
+        <button id="btnNext" onclick="onClickNext()">Next</button>
+        <button id="btnBack" onclick="onClickBack()">Back</button>    
+    </body>
+</html>
